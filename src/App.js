@@ -10,7 +10,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <p>
-          Documentation framework [MASTER]: {content.html}
+          Documentation framework [1.0.2]: {content.html}
         </p>
       </header>
     </div>
