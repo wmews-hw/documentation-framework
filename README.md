@@ -30,7 +30,10 @@ It will run and download all dependencies defined in the project's `package.json
 
 ## Install content
 
-The last step is install the version of the content that you want to see in your portal. It can also be done using content from MASTER, branch, tag, or a specific commit.
+The last step is install the version of the content that you want to see in your portal. It can also be done using content from MASTER, branch, tag, commit, or from local.
+
+> **NOTE:** Before installing a content make sure you have removed the previous in case there is a `documentation` already installed: 
+> `yarn remove documentation`
 
 ### Installing content from MASTER
 
@@ -44,9 +47,25 @@ The last step is install the version of the content that you want to see in your
 
 `yarn add ssh:git@github.com:wmews-hw/documentation#v1.0.1`
 
+### Installing from local
 
-> **NOTE:** Before installing a content make sure you have removed the previous in case there is a `documentation` already installed: 
-> `yarn remove documentation`
+To install from local we will need clone the documentation project.
+
+`git clone git@github.com:wmews-hw/documentation.git`
+
+We will create a symbolic link between these two projects using `yarn link`.
+
+First step we need to make the documentation project available inside yarn
+
+`cd documentation`
+`yarn link`
+
+Now that it is available we need to link it inside the documentation-framework.
+
+`cd ../documentation-framework`
+`yarn link documentation`
+
+You should be able to see inside the `documentation-framework/node_modules` that a symbolic folder of documentation project was create. It will allow us to do hot deploy changes when the framework is running a there is a content change made inside the documentation project.
 
 ## Build and Deploy
 
