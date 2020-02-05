@@ -1,68 +1,57 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+# POC Documentation Portal
 
-In the project directory, you can run:
+The intenton of this project is to simulate the proceess of releasing a new version of a documentation portal. The documentation portal is composed by two projects:
+* Documentation framework (this project)
+* [Documentation Content](https://github.com/wmews-hw/documentation-framework)
 
-### `yarn start`
+> A deployment needs both framework and content to be able of correclty build and deploy.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Clone framework
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+First thing to do is clone what is the version of the framework that you want to use. It can be MASTER, branch, tags, or commit.
 
-### `yarn test`
+### Clonning MASTER
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+`git clone git@github.com:wmews-hw/documentation-framework.git`
 
-### `yarn build`
+### Clonning Branch/Tag
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+`git clone -b "v1.0.2" --single-branch --depth 1 git@github.com:wmews-hw/documentation-framework.git`
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Install dependencies
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Once you are inside the project folder that you just clonned then you can simply run:
 
-### `yarn eject`
+`yarn install`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+It will run and download all dependencies defined in the project's `package.json`.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Install content
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+The last step is install the version of the content that you want to see in your portal. It can also be done using content from MASTER, branch, tag, or a specific commit.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Installing content from MASTER
 
-## Learn More
+`yarn add ssh:git@github.com:wmews-hw/documentation`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Installiing content from branches
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+`yarn add ssh:git@github.com:wmews-hw/documentation#branch-test`
 
-### Code Splitting
+### Installing content from tag
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+`yarn add ssh:git@github.com:wmews-hw/documentation#v1.0.1`
 
-### Analyzing the Bundle Size
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+> **NOTE:** Before installing a content make sure you have removed the previous in case there is a `documentation` already installed: 
+> `yarn remove documentation`
 
-### Making a Progressive Web App
+## Build and Deploy
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+To build and deploy you can simply call:
 
-### Advanced Configuration
+`yarn start`
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+It will automatically open your browser.
