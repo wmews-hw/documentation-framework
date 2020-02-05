@@ -33,7 +33,7 @@ It will run and download all dependencies defined in the project's `package.json
 The last step is install the version of the content that you want to see in your portal. It can also be done using content from MASTER, branch, tag, commit, or from local.
 
 > **NOTE:** Before installing a content make sure you have removed the previous in case there is a `documentation` already installed: 
-> `yarn remove documentation`
+> `yarn remove documentation` and/or `yarn unlink documentation`
 
 ### Installing content from MASTER
 
