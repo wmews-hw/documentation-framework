@@ -1,4 +1,6 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Node.js CI](https://github.com/wmews-hw/documentation-framework/workflows/Node.js%20CI/badge.svg?branch=master)T
+
+his project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 # POC Documentation Portal
 
